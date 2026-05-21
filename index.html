@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <title>今日の晩ごはん決める君</title>
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+
+    <!-- ハンバーガーメニュー -->
+    <button onclick="toggleMenu()" class="menu-trigger-btn">
+        <svg xmlns="http://w3.org" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hamburger-icon">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+    </button>
+
+    <!-- スライド式メニュー（初期状態は画面外） -->
+    <div id="side-menu" class="side-menu">
+        <h2>⚙️ 設定メニュー</h2>
+        
+        <div class="menu-section">
+            <p class="menu-section-title">パーソナライズ設定</p>
+            <button onclick="alert('苦手な食材フィルター機能を追加予定')" class="sub-menu-btn">苦手な食材の登録</button>
+            <button onclick="alert('好きな料理フィルター機能を追加予定')" class="sub-menu-btn">好きなメニューの登録</button>
+        </div>
+
+        <div class="menu-section">
+            <p class="menu-section-title">システム</p>
+            <button onclick="resetFamily()" class="reset-btn">⚠️ 家族構成のリセット</button>
+        </div>
+    </div>
+
+
+
+<!-- メイン -->
+    <h1>今日の晩ごはん決める君</h1>
+
+      <!-- ステップ1: 家族構成選択 (初回のみ表示) -->
+      <div id="step-family" class="hidden">
+        <p>家族構成を教えてください（次回から省略されます）</p>
+        <button onclick="saveFamily('single')">一人暮らし</button>
+        <button onclick="saveFamily('couple')">二人暮らし</button>
+        <button onclick="saveFamily('family-older')">家族(小学生以上)</button>
+        <button onclick="saveFamily('family-younger')">家族(小学生以下)</button>
+        <br><br>
+    </div>
+
+    <!-- ステップ2: 気力選択 -->
+    <div id="step-energy" class="hidden">
+        <p>今の気力（残りHP）はどれくらいですか？</p>
+        <button onclick="decideMenu('high')">元気いっぱい！</button>
+        <button onclick="decideMenu('mid')">ぼちぼち</button>
+        <button onclick="decideMenu('low')">無理・限界</button>
+        <br><br>
+    </div>
+
+    <!-- 結果表示エリア -->
+    <div id="result"></div>
+</div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script src="js/app.js"></script>
+    
+</body>
+</html>

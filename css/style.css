@@ -1,0 +1,213 @@
+/* --- 全体のリセットと背景 --- */
+body {
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f7f3ed; 
+    color: #4a3c31; 
+    margin: 0;
+}
+
+/* --- メインの白いカード --- */
+.container {
+    max-width: 480px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 35px 25px;
+    border-radius: 20px; 
+    box-shadow: 0 10px 25px rgba(139, 115, 85, 0.15); 
+    border: 2px dashed #e6dfd3; 
+}
+
+/* --- タイトル --- */
+h1 {
+    font-size: 24px;
+    color: #cc4e29; 
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+/* --- テキストのフォント調整 --- */
+p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #5d4d42;
+    margin-bottom: 25px;
+}
+
+/* --- 共通のボタンデザイン --- */
+button {
+    background: #ff9233; 
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 30px; 
+    cursor: pointer;
+    margin: 8px;
+    box-shadow: 0 4px 0 #d97316; 
+    transition: all 0.1s ease;
+}
+
+/* --- ボタンにマウスを乗せたとき --- */
+button:hover {
+    background: #ffa04d;
+    transform: translateY(1px);
+    box-shadow: 0 3px 0 #d97316;
+}
+
+/* --- ボタンを押した瞬間 --- */
+button:active {
+    transform: translateY(4px);
+    box-shadow: none; 
+}
+
+/* --- 非表示用のクラス --- */
+.hidden {
+    display: none;
+}
+
+/* --- 結果表示エリア --- */
+#result {
+    margin-top: 30px;
+    padding: 20px;
+    background: #fff9f0; 
+    border-radius: 15px;
+    border: 1px solid #f3e1cb;
+    animation: fadeIn 0.5s ease-out; 
+}
+
+/* 結果内のテキスト */
+#result p {
+    font-size: 14px;
+    color: #8c7361;
+    margin-bottom: 10px;
+}
+
+/* 選ばれたメニュー名 */
+#result div strong {
+    font-size: 26px;
+    color: #cc4e29; 
+    display: inline-block;
+    padding: 5px 0;
+}
+
+/* 補足のアドバイステキスト */
+.sub-text {
+    font-size: 13px;
+    color: #a67c52;
+    margin-top: 12px;
+    font-weight: normal;
+}
+
+
+/* --- ハンバーガーボタン（右上に固定） --- */
+.menu-trigger-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 50;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.menu-trigger-btn:hover {
+    background: #fff9f0;
+    transform: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+.menu-trigger-btn:active {
+    transform: scale(0.95);
+}
+.hamburger-icon {
+    width: 24px;
+    height: 24px;
+    stroke: #4a3c31;
+}
+
+/* --- スライド式サイドメニュー --- */
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 260px;
+    height: 100%;
+    background: white;
+    box-shadow: -5px 0 25px rgba(139, 115, 85, 0.15);
+    z-index: 40;
+    padding: 80px 20px 20px 20px;
+    box-sizing: border-box;
+    border-color: 1px solid #e6dfd3;
+
+    /* 初期状態は画面の右側に隠す */
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    text-align: left;
+}
+
+
+/* JavaScriptでこのクラスがつくとメニューが開く */
+.side-menu.open {
+    transform: translateX(0);
+}
+
+.side-menu h2 {
+    font-size: 18px;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #f7f3ed;
+    padding-bottom: 8px;
+}
+
+.menu-section {
+    margin-bottom: 25px;
+}
+
+.menu-section-title {
+    font-size: 11px;
+    color: #a67c52;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+/* --- サイドメニュー内のフラットなボタン用 --- */
+.sub-menu-btn {
+    width: 100%;
+    background: #f7f3ed;
+    color: #5d4d42;
+    box-shadow: none;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 13px;
+    text-align: left;
+    margin-bottom: 8px;
+}
+.sub-menu-btn:hover {
+    background: #fff9f0;
+    transform: none;
+    box-shadow: none;
+}
+
+/* --- 設定リセットボタン ---
+.btn-reset {
+    background: #bfa893;
+    box-shadow: 0 4px 0 #9c8470;
+    font-size: 12px;
+    padding: 8px 16px;
+    margin-top: 20px;
+}
+.btn-reset:hover {
+    background: #cbb4a0;
+    box-shadow: 0 3px 0 #9c8470;
+} */
+
+/* --- フワッと表示させるためのアニメーション設定 --- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
