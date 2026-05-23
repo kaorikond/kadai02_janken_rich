@@ -106,7 +106,7 @@ function decideMenu(energy) {
     // 現在の曜日を取得 (0=日, 1=月, 2=火, 3=水, 4=木, 5=金, 6=土)
     let currentDay = new Date().getDay();
     //曜日を強制的に変更(プレゼン用)
-    //currentDay = 3;
+    //currentDay = 5;
     let dayType = '';
     
     if (currentDay === 1 || currentDay === 5) {
@@ -136,15 +136,15 @@ function decideMenu(energy) {
         }
     }
     
-    // 結果エリアを取得して、スタイル付きクラスを当てて表示
-    const resultArea = document.getElementById('result');
-    resultArea.className = "result-box"; 
-    resultArea.innerHTML = `
-        <p>今日のおすすめは...</p>
-        <div>✨ <strong>${chosenMenu}</strong> ✨</div>
-        ${hintText}
-    `;
-    console.log("画面へのメニュー表示が完了しました。");
+   // 結果エリアを取得して、スタイル付きクラスを当てて表示
+   const resultArea = document.getElementById('result');
+   resultArea.className = "result-box"; 
+   resultArea.innerHTML = `
+       <p>今日のおすすめは...</p>
+       <div>✨ <strong>${chosenMenu}</strong> ✨</div>
+       
+   `;
+   console.log("画面へのメニュー表示が完了しました。");
 }
 
 // --- ハンバーガーメニューの開閉処理 ---
